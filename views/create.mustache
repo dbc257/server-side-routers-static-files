@@ -1,0 +1,22 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/movies/styles.css" />
+</head>
+<body>
+    <h1>Add Movie</h1>
+    <p></p>
+    <a href="http://localhost:3000/movies"><h4>View All Movies</h4></a>
+    <p></p>
+    <form method="POST" action="/movies/create">
+        <input type="text" placeHolder="Enter Movie Title" name="title" />
+        <input type="text" placeHolder="Enter Movie Description" name="description" />
+        <input type="text" placeHolder="Enter Movie Genre" name="genre" />
+        <input type="text" placeHolder="Enter Movie Poster URL" name="posterURL" />
+        <button>Add</button>
+    </form>
+    {{#title}} 
+        {{title}} has been added.
+    {{/title}}
+    <br/>
+</body>
+</html>

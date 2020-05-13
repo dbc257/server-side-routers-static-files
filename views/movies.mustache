@@ -1,0 +1,27 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/movies/styles.css" />
+</head>
+<body>
+    <h1>View All Movies</h1>
+    <p></p>
+    <a href="http://localhost:3000/movies/create"><h4>Add Movies</h4></a>
+    <p></p>
+    <br/>
+    <ul>
+    {{#movies}} 
+    <li><img src="{{posterURL}}" />
+        <br/>
+        <p>Title: <a href="/movies/{{title}}">{{title}}</a> </p> <p>Genre: <a href="/movies/genre/{{genre}}">{{genre}}</a> </p>
+        <form method="POST" action="/movies/delete">
+            <input type="hidden" value={{title}} name="title" />
+            <button>Delete</button>
+        </form>
+    </li>
+    {{/movies}}
+    </ul>
+</body>
+<footer>
+    <a href="http://localhost:3000/movies/api/movies" target="_blank"><h4>http://localhost:3000/movies/api/movies</h4></a> 
+</footer>
+</html>
